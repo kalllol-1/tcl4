@@ -1,4 +1,4 @@
-name: Build and deploy .NET Core application to Function App fa-tcl4 with API Management Service apim-tcl4-tcl4
+name: Build and deploy
 on:
   push:
     branches:
