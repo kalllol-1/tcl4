@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "tcl4": {
-      "commandName": "Project",
-      "commandLineArgs": "--port 7238",
-      "launchBrowser": true
-    }
-  }
-}
