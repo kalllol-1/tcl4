@@ -7,17 +7,15 @@ using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Enums;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
-using System.IO;
 using System.Net;
-using System.Threading.Tasks;
 
 namespace tcl4
 {
-    public class Function1
+    public class Functions
     {
-        private readonly ILogger<Function1> _logger;
+        private readonly ILogger<Functions> _logger;
 
-        public Function1(ILogger<Function1> log)
+        public Functions(ILogger<Functions> log)
         {
             _logger = log;
         }
@@ -27,7 +25,7 @@ namespace tcl4
         [OpenApiSecurity("function_key", SecuritySchemeType.ApiKey, Name = "code", In = OpenApiSecurityLocationType.Query)]
         [OpenApiParameter(name: "name", In = ParameterLocation.Query, Required = true, Type = typeof(string), Description = "The **Name** parameter")]
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(string), Description = "The OK response")]
-        public async Task<IActionResult> Run(
+        public async Task<IActionResult> Function1(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req)
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
